@@ -1,0 +1,1 @@
+export { validateRole } from './validation';

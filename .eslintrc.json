@@ -1,0 +1,152 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "plugin:react/jsx-runtime",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier", "import", "simple-import-sort"],
+  "rules": {
+    "require-jsdoc": "off",
+    "@typescript-eslint/prefer-namespace-keyword": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "typescript-eslint/ban-types": "off",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    // "import/prefer-default-expor/t": 0,
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-plusplus": "off",
+    "no-param-reassign": "off",
+    "react/prop-types": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
+        "./src/**/**/*.ts",
+        "./src/**/**/*.tsx",
+        "./src/**/**/**/*.ts",
+        "./src/**/**/**/*.tsx",
+        "./src/**/**/**/**/*.ts",
+        "./src/**/**/**/**/*.tsx",
+        "./src/**/**/**/**/**/*.ts",
+        "./src/**/**/**/**/**/*.tsx"
+      ],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              [
+                "^react$",
+                "^react-router-dom",
+                "^react-dom",
+                "^react-i18next",
+                "^react-redux",
+                "@reduxjs/toolkit",
+                "@reduxjs/toolkit/query/react",
+                "^antd",
+                "^@ant-design/icons",
+                "^@ant-design/plots",
+                "^axios",
+                "^dayjs",
+                "^classnames",
+                "^~",
+                "app",
+                "router",
+                "pages",
+                "containers",
+                "common/ui",
+                "common/components",
+                "common/helpers",
+                "common/hooks",
+                "common/constants",
+                "api/student",
+                "api/guest",
+                "api/instructor",
+                "api/admin",
+                "types/common",
+                "types/entities",
+                "types/request",
+                "types/roles",
+                "types/routes",
+                "types/store",
+                "^\\.\\.(?!/?$)",
+                "^\\.\\./?$",
+                "^\\./(?=.*/)(?!/?$)",
+                "^\\.(?!/?$)",
+                "^\\./?$",
+                ".svg",
+                ".png",
+                ".jpg",
+                ".jpeg",
+                "^\\u0000",
+                "^.+\\.s?css$"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
