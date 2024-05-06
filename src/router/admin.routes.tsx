@@ -5,6 +5,7 @@ import { adminLabels as labels, adminPath as paths } from '../types/routes/admin
 
 const AdminPage = lazy(() => import('../pages/admin/AdminPage'));
 const NotFound = lazy(() => import('../pages/admin/NotFound'));
+const MainPage = lazy(() => import('../pages/admin/MainPage'));
 
 export const adminRoutes: IRoute[] = [
   {
@@ -18,5 +19,11 @@ export const adminRoutes: IRoute[] = [
     label: labels.notFound,
     roles: [ROLES.ADMIN, ROLES.INTERN, ROLES.MANAGER, ROLES.SUPERVISOR],
     element: <NotFound />
+  },
+  {
+    path: paths.main,
+    label: labels.main,
+    roles: [ROLES.ADMIN, ROLES.INTERN, ROLES.MANAGER, ROLES.SUPERVISOR],
+    element: <MainPage />
   }
 ];

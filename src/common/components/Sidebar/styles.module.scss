@@ -1,0 +1,28 @@
+.sidebar {
+  width: 200px;
+  height: calc(100vh - 100px);
+  border-right: 1px solid black;
+  padding: 20px;
+  .chapter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li {
+      list-style: none;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    img {
+      cursor: pointer;
+      width: 30px;
+    }
+  }
+  transition: 0.3s all ease-in-out;
+}
+.isClosed {
+  width: 70px;
+  padding: 20px 0;
+  .chapter {
+    align-items: center;
+  }
+}
